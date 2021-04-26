@@ -3,6 +3,8 @@ import logo from './logo.svg';
 import Nav from './Nav.js';
 import About from './About.js';
 import Services from './Services.js';
+import Item from './Item.js';
+
 //react router
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
@@ -17,7 +19,8 @@ function App() {
           <Switch>
             <Route path="/" component={Home} exact/>
             <Route path="/about" component={About}/>
-            <Route path="/services" component={Services}/>
+            <Route path="/services" exact component={Services}/>
+            <Route path="/services/:id" component={Item}/>
           </Switch>
         </header>
       </div>

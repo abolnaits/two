@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 //import './App.css';
 import React, {useState,useEffect} from 'react';
-
+import {Link} from 'react-router-dom';
 function Services() {
   
     const fecthItems = () => {
@@ -28,7 +28,10 @@ function Services() {
         <h1>Services Page</h1>
         {
             items.map(item => (
-                <p key={item.id}>{item.id}</p>
+                <Link to={`/services/${item.id}`} key={item.id}>
+                <p>{item.id}</p>
+                </Link>
+                
             ))
         }
       </header>
